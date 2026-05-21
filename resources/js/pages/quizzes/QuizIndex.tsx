@@ -1,9 +1,9 @@
 import { Head, Link, router } from '@inertiajs/react';
-import quizzes from '@/routes/quizzes';
+import { BookOpen, Plus, Trash2, Edit3, HelpCircle, Layers } from 'lucide-react';
 import Heading from '@/components/heading';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { BookOpen, Plus, Trash2, Edit3, HelpCircle, Layers } from 'lucide-react';
+import quizzes from '@/routes/quizzes';
 import type { BreadcrumbItem } from '@/types';
 
 interface Quiz {

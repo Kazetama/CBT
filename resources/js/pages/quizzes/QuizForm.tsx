@@ -1,14 +1,13 @@
 import { Head, Link, useForm } from '@inertiajs/react';
+import { ArrowLeft } from 'lucide-react';
 import React from 'react';
-import quizzes from '@/routes/quizzes';
 import Heading from '@/components/heading';
 import InputError from '@/components/input-error';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { ArrowLeft } from 'lucide-react';
-import type { BreadcrumbItem } from '@/types';
+import quizzes from '@/routes/quizzes';
 
 interface Quiz {
     id: number;
@@ -120,17 +119,6 @@ export default function QuizForm({ quiz }: Props) {
         </>
     );
 }
-
-const breadcrumbs = (quiz: Quiz | null): BreadcrumbItem[] => [
-    {
-        title: 'Kuis & Bank Soal',
-        href: '/quizzes',
-    },
-    {
-        title: quiz ? `Edit: ${quiz.title}` : 'Buat Kuis Baru',
-        href: quiz ? `/quizzes/${quiz.id}/edit` : '/quizzes/create',
-    },
-];
 
 QuizForm.layout = {
     breadcrumbs: [

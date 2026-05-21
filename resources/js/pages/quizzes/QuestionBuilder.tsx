@@ -1,15 +1,14 @@
 import { Head, Link, useForm, router } from '@inertiajs/react';
+import { ArrowLeft, Edit3, Trash2, HelpCircle, Clock, Award, Plus, Sparkles } from 'lucide-react';
 import React, { useState } from 'react';
-import quizzes from '@/routes/quizzes';
 import Heading from '@/components/heading';
 import InputError from '@/components/input-error';
+import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, Edit3, Trash2, HelpCircle, Clock, Award, Plus, Sparkles } from 'lucide-react';
-import type { BreadcrumbItem } from '@/types';
+import quizzes from '@/routes/quizzes';
 
 interface Quiz {
     id: number;
@@ -469,17 +468,6 @@ export default function QuestionBuilder({ quiz, questions }: Props) {
         </>
     );
 }
-
-const breadcrumbs = (quiz: Quiz): BreadcrumbItem[] => [
-    {
-        title: 'Kuis & Bank Soal',
-        href: '/quizzes',
-    },
-    {
-        title: `Kelola Soal: ${quiz.title}`,
-        href: `/quizzes/${quiz.id}/questions`,
-    },
-];
 
 QuestionBuilder.layout = {
     breadcrumbs: [
