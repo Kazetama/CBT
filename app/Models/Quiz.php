@@ -19,4 +19,12 @@ class Quiz extends Model
     {
         return $this->hasMany(Question::class);
     }
+
+    /**
+     * Get the lobbies associated with this quiz.
+     */
+    public function lobbies(): HasMany
+    {
+        return $this->hasMany(Lobby::class);
+    }
 }

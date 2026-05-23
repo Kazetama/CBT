@@ -14,6 +14,7 @@ import {
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
 import { dashboard } from '@/routes';
+import lobbies from '@/routes/lobbies';
 import quizzes from '@/routes/quizzes';
 import type { NavItem } from '@/types';
 
@@ -27,6 +28,11 @@ const mainNavItems: NavItem[] = [
         title: 'Kuis & Bank Soal',
         href: quizzes.index(),
         icon: ClipboardList,
+    },
+    {
+        title: 'Manajemen Live Lobi',
+        href: lobbies.index(),
+        icon: LayoutGrid,
     }
 ];
 

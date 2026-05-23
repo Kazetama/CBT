@@ -25,6 +25,8 @@ export default function QuizIndex({ quizzes: quizList }: Props) {
         }
     };
 
+
+
     return (
         <>
             <Head title="Bank Soal - Kuis" />
@@ -85,26 +87,30 @@ export default function QuizIndex({ quizzes: quizList }: Props) {
                                         </span>
                                     </div>
                                 </CardContent>
-                                <CardFooter className="grid grid-cols-3 gap-2 border-t bg-muted/20 p-4">
-                                    <Link href={quizzes.questions.manage(quiz).url} className="col-span-2">
-                                        <Button variant="outline" className="w-full gap-2 border-indigo-200 text-indigo-700 hover:bg-indigo-50 hover:text-indigo-800 dark:border-indigo-900/50 dark:text-indigo-400 dark:hover:bg-indigo-950/40">
-                                            <Layers className="h-4 w-4" />
-                                            Kelola Soal
-                                        </Button>
-                                    </Link>
-                                    <div className="flex justify-end gap-2">
+                                <CardFooter className="flex flex-col gap-3 border-t bg-muted/20 p-4">
+                                    <div className="flex w-full gap-2">
+                                        <Link href={quizzes.questions.manage(quiz).url} className="flex-1">
+                                            <Button variant="outline" className="w-full gap-1.5 border-indigo-200 text-indigo-700 hover:bg-indigo-50 hover:text-indigo-800 dark:border-indigo-900/50 dark:text-indigo-400 dark:hover:bg-indigo-950/40 text-xs font-semibold">
+                                                <Layers className="h-3.5 w-3.5" />
+                                                Kelola Soal
+                                            </Button>
+                                        </Link>
+                                    </div>
+                                    <div className="flex w-full justify-end gap-2 border-t pt-2 border-border/40">
                                         <Link href={quizzes.edit(quiz).url}>
-                                            <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">
-                                                <Edit3 className="h-4 w-4" />
+                                            <Button variant="ghost" size="sm" className="h-8 gap-1 text-xs text-muted-foreground hover:text-foreground">
+                                                <Edit3 className="h-3.5 w-3.5" />
+                                                Edit
                                             </Button>
                                         </Link>
                                         <Button
                                             variant="ghost"
-                                            size="icon"
-                                            className="text-red-500 hover:bg-red-50 hover:text-red-600 dark:hover:bg-red-950/30"
+                                            size="sm"
+                                            className="h-8 gap-1 text-xs text-red-500 hover:bg-red-50 hover:text-red-600 dark:hover:bg-red-950/30"
                                             onClick={() => handleDelete(quiz.id)}
                                         >
-                                            <Trash2 className="h-4 w-4" />
+                                            <Trash2 className="h-3.5 w-3.5" />
+                                            Hapus
                                         </Button>
                                     </div>
                                 </CardFooter>
